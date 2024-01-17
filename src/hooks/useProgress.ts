@@ -5,6 +5,8 @@ function calculateProgress(progressGroups: ProgressGroup[]) {
   let progressTotal = 0
   let total = 0
 
+  if (!progressGroups.length) return 0
+
   for (const { tasks } of progressGroups) {
     for (const { checked, value } of tasks) {
       total += value
@@ -14,7 +16,7 @@ function calculateProgress(progressGroups: ProgressGroup[]) {
     }
   }
 
-  return Math.round((progressTotal / total) * 100)
+  return progressTotal / total
 }
 
 export const useProgress = () => {

@@ -1,4 +1,5 @@
 import React from "react"
+import { Body } from "../Typography"
 
 interface CheckBoxProps {
   children: React.ReactNode
@@ -10,7 +11,7 @@ function Checkbox({ children, checked, onChange }: CheckBoxProps) {
   return (
     <label>
       <input type={"checkbox"} checked={checked} onChange={onChange} />
-      {children}
+      <Body>{children}</Body>
     </label>
   )
 }

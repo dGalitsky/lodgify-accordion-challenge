@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react"
 import { Task } from "../Task"
+import { Body } from "../Typography"
 
 interface ProgressGroupProps extends ProgressGroup {
   index: number
@@ -23,7 +24,7 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
   return (
     <>
       <div>
-        <h4>{name}</h4>
+        <Body>{name}</Body>
         <button type="button" onClick={onExpandToggle}>
           {expanded ? "Hide" : "Show"}
         </button>
