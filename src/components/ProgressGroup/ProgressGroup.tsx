@@ -15,7 +15,7 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
   )
 
   return (
-    <li>
+    <>
       <h4>{name}</h4>
       <ul>
         {tasks.map(({ description, checked }, taskIndex) => (
@@ -24,12 +24,11 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
             description={description}
             checked={checked}
             index={taskIndex}
-            groupIndex={index}
             onChange={_onChange}
           />
         ))}
       </ul>
-    </li>
+    </>
   )
 }
 

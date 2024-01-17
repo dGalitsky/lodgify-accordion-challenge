@@ -13,13 +13,15 @@ function App() {
       {progressGroups.length ? (
         <ul>
           {progressGroups.map(({ name, tasks }, groupIndex) => (
-            <ProgressGroup
-              key={name}
-              name={name}
-              tasks={tasks}
-              index={groupIndex}
-              onChange={onTaskToggle}
-            />
+            <li>
+              <ProgressGroup
+                key={name}
+                name={name}
+                tasks={tasks}
+                index={groupIndex}
+                onChange={onTaskToggle}
+              />
+            </li>
           ))}
         </ul>
       ) : (

@@ -12,11 +12,11 @@ function Task({ description, checked, index, onChange }: TaskProps) {
   }, [index, onChange])
 
   return (
-    <li>
+    <div>
       <Checkbox checked={checked} onChange={_onChange}>
         {description}
       </Checkbox>
-    </li>
+    </div>
   )
 }
 

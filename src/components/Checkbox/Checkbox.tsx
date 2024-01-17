@@ -2,7 +2,7 @@ import React from "react"
 
 interface CheckBoxProps {
   children: React.ReactNode
-  checked: boolean
+  checked?: boolean
   onChange: () => void
 }
 
