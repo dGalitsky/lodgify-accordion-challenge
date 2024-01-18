@@ -37,4 +37,5 @@
   /* Global styles */
   color: var(--color-grey-900);
   background-color: var(--color-grey-100);
+  min-width: 320px;
 }
