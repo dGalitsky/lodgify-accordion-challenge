@@ -7,7 +7,6 @@ interface ProgressBarProps {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
   height: 24px;
   margin-top: var(--spacing-md);
   border-radius: var(--radius-lg);

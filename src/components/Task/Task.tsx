@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { Checkbox } from "../Checkbox"
+import { StyledCheckbox } from "./Task.styled"
 
 interface TaskProps extends Omit<ProgressTask, "value"> {
   index: number
@@ -12,11 +12,9 @@ function Task({ description, checked, index, onChange }: TaskProps) {
   }, [index, onChange])
 
   return (
-    <div>
-      <Checkbox checked={checked} onChange={_onChange}>
-        {description}
-      </Checkbox>
-    </div>
+    <StyledCheckbox checked={checked} onChange={_onChange}>
+      {description}
+    </StyledCheckbox>
   )
 }
 

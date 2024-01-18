@@ -1,6 +1,15 @@
 import { useCallback, useState } from "react"
+import bookingFeaturesIcon from "../../assets/booking-features.svg"
+import bookingOkIcon from "../../assets/booking-ok.svg"
+import { AccordionToggle } from "../AccordionToggle"
 import { Task } from "../Task"
-import { Body } from "../Typography"
+import {
+  Icon,
+  TaskList,
+  Title,
+  TitleWrapper,
+  Wrapper,
+} from "./ProgressGroup.styled"
 
 interface ProgressGroupProps extends ProgressGroup {
   index: number
@@ -21,16 +30,19 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
     setExpanded(!expanded)
   }, [expanded])
 
+  const completed = tasks.every(({ checked }) => checked)
+
   return (
     <>
-      <div>
-        <Body>{name}</Body>
-        <button type="button" onClick={onExpandToggle}>
-          {expanded ? "Hide" : "Show"}
-        </button>
-      </div>
+      <Wrapper onClick={onExpandToggle}>
+        <TitleWrapper>
+          <Icon src={completed ? bookingOkIcon : bookingFeaturesIcon} />
+          <Title completed={completed}>{name}</Title>
+        </TitleWrapper>
+        <AccordionToggle expanded={expanded} />
+      </Wrapper>
       {expanded && (
-        <ul>
+        <TaskList>
           {tasks.map(({ description, checked }, taskIndex) => (
             <li>
               <Task
@@ -42,7 +54,7 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
               />
             </li>
           ))}
-        </ul>
+        </TaskList>
       )}
     </>
   )

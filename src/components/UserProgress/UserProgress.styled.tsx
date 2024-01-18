@@ -26,3 +26,22 @@ export const Header = styled.header`
     padding: var(--spacing-lg) var(--spacing-md);
   }
 `
+
+export const ProgressGroupListItem = styled.li`
+  border: 1px solid var(--color-grey-300);
+  list-style: none;
+
+  &:not(:first-of-type) {
+    border-top-width: 0;
+  }
+
+  &:first-of-type {
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+  }
+`

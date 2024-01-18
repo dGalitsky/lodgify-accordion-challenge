@@ -26,6 +26,7 @@
   --spacing-xl: 32px;
 
   /* Border radius */
+  --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-lg: 24px;
 
