@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: var(--spacing-lg);
+
+  &:hover {
+    background-color: var(--color-grey-100);
+  }
 `
 
 export const TitleWrapper = styled.div`
@@ -12,8 +16,8 @@ export const TitleWrapper = styled.div`
   align-items: center;
 `
 
-export const Title = styled(Body)<{ completed?: boolean }>`
-  ${({ completed }) =>
+export const Title = styled(Body)<{ $completed?: boolean }>`
+  ${({ $completed: completed }) =>
     completed &&
     `
     color: var(--color-success-dark);

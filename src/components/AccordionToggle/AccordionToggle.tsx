@@ -9,7 +9,7 @@ function AccordionToggle({ expanded }: AccordionToggleProps) {
   return (
     <ToggleWrapper>
       <Body>{expanded ? "Hide" : "Show"}</Body>
-      <ArrowIcon expanded={expanded} src={arrowLineDown} />
+      <ArrowIcon $expanded={expanded} src={arrowLineDown} />
     </ToggleWrapper>
   )
 }

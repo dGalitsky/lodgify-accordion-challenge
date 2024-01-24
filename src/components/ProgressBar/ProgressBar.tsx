@@ -13,9 +13,9 @@ const Wrapper = styled.div`
   background: var(--color-success-light);
 `
 
-const Indicator = styled.div<{ progress?: number }>`
+const Indicator = styled.div<{ $progress?: number }>`
   /* Using flex instead of width to mitigate min-width problems when percentage is low */
-  flex: ${props => props.progress};
+  flex: ${props => props.$progress};
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -33,7 +33,7 @@ function ProgressBar({ progress }: ProgressBarProps) {
   const percentage = Math.round(progress * 100) + "%"
   return (
     <Wrapper>
-      <Indicator progress={progress}>
+      <Indicator $progress={progress}>
         <Text>{percentage}</Text>
       </Indicator>
     </Wrapper>

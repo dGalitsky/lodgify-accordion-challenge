@@ -2,7 +2,12 @@ import { useProgress } from "../../hooks/useProgress"
 import { ProgressBar } from "../ProgressBar"
 import { ProgressGroup } from "../ProgressGroup"
 import { Title } from "../Typography"
-import { Content, Header, ProgressGroupListItem, Wrapper } from "./UserProgress.styled"
+import {
+  Content,
+  Header,
+  ProgressGroupListItem,
+  Wrapper,
+} from "./UserProgress.styled"
 
 function UserProgress() {
   const { progressGroups, onTaskToggle, progress } = useProgress()
@@ -17,9 +22,8 @@ function UserProgress() {
         {progressGroups.length ? (
           <ul>
             {progressGroups.map(({ name, tasks }, groupIndex) => (
-              <ProgressGroupListItem>
+              <ProgressGroupListItem key={name}>
                 <ProgressGroup
-                  key={name}
                   name={name}
                   tasks={tasks}
                   index={groupIndex}

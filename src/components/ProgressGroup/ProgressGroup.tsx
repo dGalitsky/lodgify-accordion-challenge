@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState, memo } from "react"
 import bookingFeaturesIcon from "../../assets/booking-features.svg"
 import bookingOkIcon from "../../assets/booking-ok.svg"
 import { AccordionToggle } from "../AccordionToggle"
@@ -34,19 +34,18 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
 
   return (
     <>
-      <Wrapper onClick={onExpandToggle}>
+      <Wrapper role="button" onClick={onExpandToggle}>
         <TitleWrapper>
           <Icon src={completed ? bookingOkIcon : bookingFeaturesIcon} />
-          <Title completed={completed}>{name}</Title>
+          <Title $completed={completed}>{name}</Title>
         </TitleWrapper>
         <AccordionToggle expanded={expanded} />
       </Wrapper>
       {expanded && (
         <TaskList>
           {tasks.map(({ description, checked }, taskIndex) => (
-            <li>
+            <li key={description}>
               <Task
-                key={description}
                 description={description}
                 checked={checked}
                 index={taskIndex}
