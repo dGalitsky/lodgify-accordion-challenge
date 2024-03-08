@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { act, render, screen } from "@testing-library/react"
 import { ProgressGroup } from "."
 
 const mockProgressGroup: ProgressGroup = {
@@ -45,7 +45,7 @@ test("ProgressGroup should render a group title with the provided name", () => {
   expect(groupTitle.textContent).toBe(mockProgressGroup.name)
 })
 
-test("ProgressGroup should render an unordered list containing tasks", () => {
+test("ProgressGroup should render an unordered list containing tasks", async () => {
   render(
     <ProgressGroup
       name={mockProgressGroup.name}
@@ -54,13 +54,18 @@ test("ProgressGroup should render an unordered list containing tasks", () => {
       onChange={jest.fn()}
     />
   )
+
+  const expandButton = screen.getAllByRole("button")[0]
+  await act(async () => {
+    await expandButton.click()
+  })
   const list = screen.getByRole("list")
   const listItems = screen.getAllByRole("listitem")
   expect(list).toBeTruthy()
-  expect(listItems).toHaveLength(mockProgressGroup.tasks.length)
+  expect(listItems).toHaveLength(mockProgressGroup.tasks.length + 1)
 })
 
-test("ProgressGroup should call the onChange prop when a task checkbox is clicked", async () => {
+test("ProgressGroup should call the onChange prop when a task checkbox is clicked and expand the task list", async () => {
   const onChangeSpy = jest.fn()
   render(
     <ProgressGroup
@@ -70,10 +75,15 @@ test("ProgressGroup should call the onChange prop when a task checkbox is clicke
       onChange={onChangeSpy}
     />
   )
+  const expandButton = screen.getAllByRole("button")[0]
+  await act(async () => {
+    await expandButton.click()
+  })
   const taskCheckbox = await screen.findByRole("checkbox", {
     name: "Jump three times with one leg",
   })
-  await taskCheckbox.click()
-  // expect(onChangeSpy).toHaveBeenCalledTimes(1)
-  expect(onChangeSpy).toHaveBeenCalledWith(0,1)
+  await act(async () => {
+    await taskCheckbox.click()
+  })
+  expect(onChangeSpy).toHaveBeenCalledWith(0, 1)
 })

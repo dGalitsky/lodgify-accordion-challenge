@@ -38,7 +38,7 @@ function ProgressGroup({ name, tasks, index, onChange }: ProgressGroupProps) {
       <Wrapper role="button" onClick={onExpandToggle}>
         <TitleWrapper>
           <Icon>{completed ? <BookingOkIcon /> : <BookingFeaturesIcon />}</Icon>
-          <Title $completed={completed}>{name}</Title>
+          <Title $completed={completed} as="h5">{name}</Title>
         </TitleWrapper>
         <AccordionToggle expanded={expanded} groupName={name} />
       </Wrapper>

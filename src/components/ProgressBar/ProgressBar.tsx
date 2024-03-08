@@ -14,7 +14,7 @@ function ProgressBar({ progress }: ProgressBarProps) {
       aria-label="Lodgify tasks progress"
     >
       <Indicator $progress={progress}>
-        <Text>{percentage}%</Text>
+        <Text>{`${percentage}%`}</Text>
       </Indicator>
     </Wrapper>
   )
