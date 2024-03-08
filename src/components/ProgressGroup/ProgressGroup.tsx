@@ -1,4 +1,4 @@
-import { useCallback, useState, memo } from "react"
+import { useCallback, useState } from "react"
 import bookingFeaturesIcon from "../../assets/booking-features.svg"
 import bookingOkIcon from "../../assets/booking-ok.svg"
 import { AccordionToggle } from "../AccordionToggle"
