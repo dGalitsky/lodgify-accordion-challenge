@@ -1,5 +1,25 @@
 import styled from "styled-components"
 import { Body } from "../Typography"
+import { ToggleWrapper } from "../AccordionToggle/AccordionToggle.styled"
+
+export const ListItem = styled.li`
+  border: 1px solid var(--color-grey-300);
+  list-style: none;
+
+  &:not(:first-of-type) {
+    border-top-width: 0;
+  }
+
+  &:first-of-type {
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+  }
+`
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,7 +27,9 @@ export const Wrapper = styled.div`
   padding: var(--spacing-lg);
 
   &:hover {
-    background-color: var(--color-grey-100);
+    ${ToggleWrapper} ${Body} {
+      text-decoration: underline;
+    }
   }
 `
 

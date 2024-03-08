@@ -6,8 +6,11 @@ export const Label = styled.label`
   align-items: center;
   padding: var(--spacing-md);
 
-  /* All other text is #333 except checkboxes - was it intended? */
   color: var(--color-black);
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 export const Input = styled.input`

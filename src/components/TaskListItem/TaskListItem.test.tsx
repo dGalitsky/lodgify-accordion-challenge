@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { Task } from "."
+import { TaskListItem } from "."
 
 const mockTask: ProgressTask = {
   description: "Jump three times with one leg",
@@ -9,7 +9,7 @@ const mockTask: ProgressTask = {
 
 test("Task should render a checkbox with the provided description", () => {
   render(
-    <Task
+    <TaskListItem
       description={mockTask.description}
       checked={mockTask.checked}
       index={0}
@@ -23,7 +23,7 @@ test("Task should render a checkbox with the provided description", () => {
 test("Task should call the onChange prop when the checkbox is clicked", async () => {
   const onChangeSpy = jest.fn()
   render(
-    <Task
+    <TaskListItem
       description={mockTask.description}
       checked={mockTask.checked}
       index={0}

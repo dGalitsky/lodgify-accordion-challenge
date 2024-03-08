@@ -5,7 +5,6 @@ import { Title } from "../Typography"
 import {
   Content,
   Header,
-  ProgressGroupListItem,
   Wrapper,
 } from "./UserProgress.styled"
 
@@ -22,14 +21,13 @@ function UserProgress() {
         {progressGroups.length ? (
           <ul>
             {progressGroups.map(({ name, tasks }, groupIndex) => (
-              <ProgressGroupListItem key={name}>
-                <ProgressGroup
-                  name={name}
-                  tasks={tasks}
-                  index={groupIndex}
-                  onChange={onTaskToggle}
-                />
-              </ProgressGroupListItem>
+              <ProgressGroup
+                key={name}
+                name={name}
+                tasks={tasks}
+                index={groupIndex}
+                onChange={onTaskToggle}
+              />
             ))}
           </ul>
         ) : (
