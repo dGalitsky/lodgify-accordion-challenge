@@ -5,8 +5,8 @@ export const Label = styled.label`
   justify-content: start;
   align-items: center;
   padding: var(--spacing-md);
-
   color: var(--color-black);
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

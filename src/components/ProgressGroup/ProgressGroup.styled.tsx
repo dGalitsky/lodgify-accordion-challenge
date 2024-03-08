@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: var(--spacing-lg);
+  cursor: pointer;
 
   &:hover {
     ${ToggleWrapper} ${Body} {
