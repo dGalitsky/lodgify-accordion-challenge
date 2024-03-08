@@ -5,11 +5,16 @@ interface ProgressBarProps {
 }
 
 function ProgressBar({ progress }: ProgressBarProps) {
-  const percentage = Math.round(progress * 100) + "%"
+  const percentage = Math.round(progress * 100)
   return (
-    <Wrapper $progress={progress}>
+    <Wrapper
+      $progress={progress}
+      role="progressbar"
+      aria-valuenow={percentage}
+      aria-label="Lodgify tasks progress"
+    >
       <Indicator $progress={progress}>
-        <Text>{percentage}</Text>
+        <Text>{percentage}%</Text>
       </Indicator>
     </Wrapper>
   )
