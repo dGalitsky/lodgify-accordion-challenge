@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# Lodgify Accordion Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is a Frontned Challenge for Lodgify. It involves creating a Component to keep progress of user's tasks. The tasks are fetched from a static JSON file. The file contains a number of groups, each with a number of tasks. The tasks are displayed in an accordion format, where the user can expand and collapse the tasks. The user can also mark a task as completed. Each task has its own weight, which updates the progress bar differently depending on the task.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center"><img src="screenshot.png" alt="Screenshot of the project" width="600"/></p>
 
-## Expanding the ESLint configuration
+## Highlights
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Mobile-first layout.
+- Keyboard and screen reader accessible. THe project uses both semanthic HTML and aria attributes.
+- A few animations to make the user experience more pleasant.
+- No external libraries used except for `styled-components`.
 
-- Configure the top-level `parserOptions` property like this:
+## Tech
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The project is built on React and Typescript with Vite as a starter. It uses styled-components for styling. ESLint is used for linting.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## How to run
+
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run dev`
+4. Open `http://localhost:5173` in your browser if it doesn't open automatically.
+
+## Scripts
+
+- `npm run dev` - Start the development server
+- `npm run lint` - Run ESLint
+- `npm run test` - Run unit tests
+- `npm run build` - Build the project
+- `npm run preview` - Preview the production build
