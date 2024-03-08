@@ -1,8 +1,7 @@
 import React from "react"
 import { Body } from "../Typography"
 import { FakeCheckboxWrapper, Input, Label } from "./Checkbox.styled"
-
-import checkIcon from "../../assets/check.svg"
+import Check from "../../../assets/check.svg?react"
 
 interface CheckBoxProps {
   children: React.ReactNode
@@ -16,7 +15,7 @@ interface FaceCheckboxProps {
 
 const Icon = ({ checked }: FaceCheckboxProps) => (
   <FakeCheckboxWrapper checked={checked}>
-    {checked ? <img src={checkIcon} alt="Checkbox" /> : null}
+    {!!checked && <Check />}
   </FakeCheckboxWrapper>
 )
 

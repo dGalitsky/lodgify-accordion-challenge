@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Body as BodyText } from "../Typography"
+import _ArrowIcon from "../../../assets/arrow-line-down.svg?react"
 
 export const ToggleWrapper = styled.button`
   display: flex;
@@ -16,8 +17,10 @@ export const ToggleWrapper = styled.button`
   }
 `
 
-export const ArrowIcon = styled.img<{ $expanded?: boolean }>`
-  transform: ${props => (props.$expanded ? "rotate(180deg)" : "rotate(0deg)")};
+export const ArrowIcon = styled(_ArrowIcon)<{ $expanded?: boolean }>`
+  transform: ${props =>
+    props.$expanded ? "rotateX(180deg)" : "rotateX(0deg)"};
+  transition: transform 0.3s ease;
 `
 
 export const Body = styled(BodyText)`

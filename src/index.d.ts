@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 interface ProgressTask {
   description: string
   value: number

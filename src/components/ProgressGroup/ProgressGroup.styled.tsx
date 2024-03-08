@@ -47,7 +47,7 @@ export const Title = styled(Body)<{ $completed?: boolean }>`
   `}
 `
 
-export const Icon = styled.img`
+export const Icon = styled.span<{ $completed?: boolean }>`
   width: 16px;
   height: 16px;
   margin-right: var(--spacing-md);
