@@ -29,7 +29,7 @@ export const FakeCheckboxWrapper = styled.span<{ checked?: boolean }>`
 
   border-radius: var(--radius-xs);
 
-  ${Label}:focus-within & {
+  ${Label}:has(:focus-visible) & {
     outline: 2px solid var(--color-success-dark);
     outline-offset: var(--spacing-xs);
     border-radius: 2px;

@@ -9,7 +9,7 @@ export const ToggleWrapper = styled.button`
   background: none;
   border: none;
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid var(--color-success-dark);
     outline-offset: var(--spacing-xs);
     border-radius: 2px;
